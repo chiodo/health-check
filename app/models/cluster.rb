@@ -1,3 +1,4 @@
+# Represents the overall picture of health for a given cluster
 class Cluster < ActiveRecord::Base
   has_many :cluster_health_data
 

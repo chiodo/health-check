@@ -1,3 +1,4 @@
+#Represents one of the two replica types: Standby or Follower.
 class Replica
   include ActiveModel::Model
 
@@ -31,6 +32,7 @@ class Replica
 
   #determine if a replica is healthy, based on its offset and sync state
   def healthy?
+    #todo: paramaterize this a bit more.
     replication_lag_bytes < 1024 && state == 'streaming'
   end
 
