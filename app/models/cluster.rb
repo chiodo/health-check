@@ -17,4 +17,8 @@ class Cluster < ApplicationRecord
   def services
     cluster_health_data.most_recent.doc['services']
   end
+
+  def database_state
+    cluster_health_data.most_recent.master
+  end
 end

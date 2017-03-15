@@ -3,10 +3,17 @@
   <div class="row"><h4>Database State</h4></div>
   <div class="row">
     <div class="col-md-4">
+      <p>Master health</p>
+      <ul class="list-group">
+        <li class="list-group-item <%= @cluster.database_state.connect_ok? ? 'list-group-item-success' : 'list-group-item-danger'%>">connect</li>
+        <li class="list-group-item <%= @cluster.database_state.free_space_ok? ? 'list-group-item-success' : 'list-group-item-danger'%>">free space</li>
+        <li class="list-group-item <%= @cluster.database_state.archive_ok? ? 'list-group-item-success' : 'list-group-item-danger'%>">archive</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
       <p>Followers</p>
       <div id="accordionFollower" role="tablist" aria-multiselectable="true">
         <% @cluster.followers.each_with_index do |follower, i| %>
-
             <div class="card <%= follower.healthy? ? 'card-success' : 'card-danger' %>">
               <div class="card-header" role="tab" id="headingFollower<%= i %>">
                 <h5 class="mb-0">
@@ -27,7 +34,6 @@
               </div>
             </div>
         <% end %>
-
       </div>
     </div>
 
@@ -64,7 +70,7 @@
     <div class="col-md-4">
       <p>Services</p>
       <ul class="list-group">
-        <% @cluster.services.each do |service| %>
+        <% @cluster.services.except('ok').each do |service| %>
             <li class="list-group-item <%= service[1] == 'ok' ? 'list-group-item-success' : 'list-group-item-danger' %>"><%= service[0] %></li>
         <% end %>
       </ul>

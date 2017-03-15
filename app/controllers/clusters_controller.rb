@@ -1,14 +1,13 @@
+#Simple controller to show cluster data
 class ClustersController < ApplicationController
   before_action :set_cluster, only: [:show]
 
   # GET /clusters
-  # GET /clusters.json
   def index
     @clusters = Cluster.all
   end
 
   # GET /clusters/1
-  # GET /clusters/1.json
   def show
   end
 

@@ -11,7 +11,9 @@ class ClusterHealthDatum < ApplicationRecord
   end
 
 
-
+  def master
+    Master.new doc['database'].except('replication_status')
+  end
 
 
 end

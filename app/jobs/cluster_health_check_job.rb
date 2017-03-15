@@ -1,3 +1,5 @@
+#job class that would periodically fetch cluster health data from remote sources
+#Currently only utilizes local file data, but in real env would use remote resources.
 class ClusterHealthCheckJob < ApplicationJob
   queue_as :default
 
