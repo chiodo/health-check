@@ -1,4 +1,4 @@
-class ClusterHealthDatum < ApplicationRecord
+class ClusterHealthDatum < ActiveRecord::Base
 
   scope :most_recent, -> { order(created_at: :desc).limit(1).first}
 

@@ -1,4 +1,4 @@
-class Cluster < ApplicationRecord
+class Cluster < ActiveRecord::Base
   has_many :cluster_health_data
 
   def healthy?
