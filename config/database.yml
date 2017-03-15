@@ -18,7 +18,7 @@ development:
   encoding: unicode
   database: health-check_development
   pool:     5
-  username: health-check
+  username:
   password:
   template: template0
 
@@ -46,7 +46,7 @@ test:
   encoding: unicode
   database: health-check_test
   pool:     5
-  username: health-check
+  username:
   password:
   template: template0
 

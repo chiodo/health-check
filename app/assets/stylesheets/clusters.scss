@@ -1,0 +1,38 @@
+// Place all the styles related to the clusters controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.list-group-item {
+  padding: 0.25rem;
+}
+
+.card {
+
+}
+
+h5 {
+  font-size: 1.0em;
+}
+
+h2 {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+h4 {
+  padding-top: 5px;
+}
+
+a {
+  text-decoration: underline;
+}
+
+div#accordion {
+  margin: 5px;
+}
+
+.card-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+}

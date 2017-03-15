@@ -1,0 +1,73 @@
+<div class="container">
+  <h2><%= @cluster.name %></h2>
+  <div class="row"><h4>Database State</h4></div>
+  <div class="row">
+    <div class="col-md-4">
+      <p>Followers</p>
+      <div id="accordionFollower" role="tablist" aria-multiselectable="true">
+        <% @cluster.followers.each_with_index do |follower, i| %>
+
+            <div class="card <%= follower.healthy? ? 'card-success' : 'card-danger' %>">
+              <div class="card-header" role="tab" id="headingFollower<%= i %>">
+                <h5 class="mb-0">
+                  <a data-toggle="collapse" data-parent="#accordionFollower" href="#collapseFollower<%= i %>" aria-expanded="false" aria-controls="collapseFollower<%= i %>">
+                    <%= follower.usename %>
+                  </a>
+                </h5>
+              </div>
+
+              <div id="collapseFollower<%= i %>" class="collapse" role="tabpanel" aria-labelledby="headingFollower<%= i %>">
+                <div class="card-block">
+                  <ul class="list-group list-group-flush">
+                    <% follower.attributes.each do |k, v| %>
+                        <li class="list-group-item"><%= k %>: <%= v %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <p>Standbys</p>
+      <div id="accordionStandby" role="tablist" aria-multiselectable="true">
+        <% @cluster.standbys.each_with_index do |standbys, i| %>
+            <div class="card <%= standbys.healthy? ? 'card-success' : 'card-danger' %>">
+              <div class="card-header" role="tab" id="headingStandby<%= i %>">
+                <h5 class="mb-0">
+                  <a data-toggle="collapse" data-parent="#accordionStandby" href="#collapseStandby<%= i %>" aria-expanded="false" aria-controls="collapseStandby<%= i %>">
+                    <%= standbys.usename %>
+                  </a>
+                </h5>
+              </div>
+
+              <div id="collapseStandby<%= i %>" class="collapse" role="tabpanel" aria-labelledby="headingStandby<%= i %>">
+                <div class="card-block">
+                  <ul class="list-group list-group-flush">
+                    <% standbys.attributes.each do |k, v| %>
+                        <li class="list-group-item"><%= k %>: <%= v %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+  <div class="row"><h4>System</h4></div>
+  <div class="row">
+    <div class="col-md-4">
+      <p>Services</p>
+      <ul class="list-group">
+        <% @cluster.services.each do |service| %>
+            <li class="list-group-item <%= service[1] == 'ok' ? 'list-group-item-success' : 'list-group-item-danger' %>"><%= service[0] %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

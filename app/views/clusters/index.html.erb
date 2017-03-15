@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clusters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ok?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clusters.each do |cluster| %>
+      <tr>
+        <td><%= link_to cluster.name, cluster %></td>
+        <td><%= cluster.healthy?%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

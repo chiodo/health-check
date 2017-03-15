@@ -1,0 +1,17 @@
+class ClusterHealthDatum < ApplicationRecord
+
+  scope :most_recent, -> { order(created_at: :desc).limit(1).first}
+
+  def replica_by_type(type)
+    database_status = doc['database']
+    repl_status = database_status['replication_status']
+    pg_stat_repl = repl_status['pg_stat_replication']
+
+    pg_stat_repl.select {|inst| inst['application_name'] == type}.map {|a| Replica.new(a)}
+  end
+
+
+
+
+
+end
