@@ -1,9 +1,9 @@
 <div class="container">
   <h2><%= @cluster.name %></h2>
-  <div class="row"><h4>Database State</h4></div>
+  <div class="row"><h4><%= t('database_state') %></h4></div>
   <div class="row">
     <div class="col-md-4">
-      <p>Master health</p>
+      <p><%= t('master_health') %></p>
       <ul class="list-group">
         <li class="list-group-item <%= @cluster.database_state.connect_ok? ? 'list-group-item-success' : 'list-group-item-danger'%>">connect</li>
         <li class="list-group-item <%= @cluster.database_state.free_space_ok? ? 'list-group-item-success' : 'list-group-item-danger'%>">free space</li>
@@ -11,7 +11,7 @@
       </ul>
     </div>
     <div class="col-md-4">
-      <p>Followers</p>
+      <p><%= t('followers') %></p>
       <div id="accordionFollower" role="tablist" aria-multiselectable="true">
         <% @cluster.followers.each_with_index do |follower, i| %>
             <div class="card <%= follower.healthy? ? 'card-success' : 'card-danger' %>">
@@ -38,7 +38,7 @@
     </div>
 
     <div class="col-md-4">
-      <p>Standbys</p>
+      <p><%= t('standbys') %></p>
       <div id="accordionStandby" role="tablist" aria-multiselectable="true">
         <% @cluster.standbys.each_with_index do |standbys, i| %>
             <div class="card <%= standbys.healthy? ? 'card-success' : 'card-danger' %>">
@@ -65,10 +65,10 @@
       </div>
     </div>
   </div>
-  <div class="row"><h4>System</h4></div>
+  <div class="row"><h4><%= t('system') %></h4></div>
   <div class="row">
     <div class="col-md-4">
-      <p>Services</p>
+      <p><%= t('services') %></p>
       <ul class="list-group">
         <% @cluster.services.except('ok').each do |service| %>
             <li class="list-group-item <%= service[1] == 'ok' ? 'list-group-item-success' : 'list-group-item-danger' %>"><%= service[0] %></li>

@@ -9,6 +9,9 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  #throw messages for missing i18n keys
+  config.i18n.fallbacks = false
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
