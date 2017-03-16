@@ -52,10 +52,7 @@ test:
 
 production:
   adapter:  postgresql
-  host:     localhost
   encoding: unicode
-  database: health-check_production
   pool:     5
-  username: health-check
-  password:
+  url: <%= ENV['DATABASE_URL'] %>
   template: template0
