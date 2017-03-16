@@ -1,50 +1,20 @@
 Health Check
 ================
+Check your health!  Well, the health of your cluster.  This rather simple rails app presents a view into the health of 
+your cluster based on the data returned from the health check.  The primary focus is on presenting a simple view of all 
+your clusters, then provide drill down where appropriate.
+## Basic Operation
+Rails application, using Postgres, Ruby 2.4.0, Bundler, Rails 5.0.2.
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
-
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
-
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.4.0
-- Rails 5.0.2
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+To see it in action, go to: https://pure-dawn-57596.herokuapp.com/clusters (Free heroku dyno, so you may have to hit it twice)
+## Things to do
+With a pretty short time frame, I focused largely on basic functionality and a stab at organizing the data in a way that 
+would make it easy to get a quick glance view of health for the cluster.  That being said, here are a few ideas of where to take this:
+* Better spec coverage.  Behavior is still undefined, so it didn't make a lot of sense to invest time into spec coverage
+* Better defined behaviors.  
+* Enable the periodic checking of clusters.  There's a job, but running it repeatedly isn't useful with the existing stub data
+* More stub/test data for validation of behaviors and visualizations
+* Flatten the JSON into data attributes and proper relations.  Currently the JSON data structure has too strong an affect on the behavior of the app
+* Well defined JSON document definition, maybe using JSON HyperSchema or something similar
+* Better visualization, something akin to [OpsDash](https://www.opsdash.com/blog/postgresql-streaming-replication-howto.html)
+* Historical data analysis, i.e. how does the data change over time?
