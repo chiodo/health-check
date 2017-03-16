@@ -6,3 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Cluster.create(name: 'Master1', master_url: 'db/stubs/master1.json')
+Cluster.create(name: 'Master2', master_url: 'db/stubs/master2.json')

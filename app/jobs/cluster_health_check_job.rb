@@ -1,6 +1,6 @@
 #job class that would periodically fetch cluster health data from remote sources
 #Currently only utilizes local file data, but in real env would use remote resources.
-class ClusterHealthCheckJob < ApplicationJob
+class ClusterHealthCheckJob < ActiveJob::Base
   queue_as :default
 
   def perform(*args)

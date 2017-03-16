@@ -1,0 +1,99 @@
+{
+  "services": {
+    "audit": "ok",
+    "authn": "ok",
+    "ldap-sync": "ok",
+    "authz": "ok",
+    "rotation": "ok",
+    "expiration": "ok",
+    "host-factory": "ok",
+    "ldap": "ok",
+    "pubkeys": "ok",
+    "core": "ok",
+    "ok": true
+  },
+  "database": {
+    "ok": true,
+    "connect": {
+      "main": "ok",
+      "archive": "ok"
+    },
+    "free_space": {
+      "main": {
+        "inodes": 999,
+        "kbytes": 14494764
+      },
+      "archive": {
+        "inodes": 1065475,
+        "kbytes": 14494764
+      }
+    },
+    "replication_status": {
+      "pg_stat_replication": [
+        {
+          "usename": "conjur-follower-conjurops-4-8-0-rc2.us-east-1.itp.conjur.net",
+          "application_name": "follower",
+          "client_addr": "54.211.178.99",
+          "backend_start": "2016-12-14 11:08:21 +0000",
+          "state": "streaming",
+          "sent_location": "8/2FD82350",
+          "replay_location": "8/2FD82350",
+          "sync_priority": 0,
+          "sync_state": "async",
+          "sent_location_bytes": 35162432336,
+          "replay_location_bytes": 35162432336,
+          "replication_lag_bytes": 1025
+        },
+        {
+          "usename": "conjur-follower-conjurops-4-8-0-rc2.us-east-1.itp.conjur.net",
+          "application_name": "follower",
+          "client_addr": "107.23.142.215",
+          "backend_start": "2016-11-14 17:37:21 +0000",
+          "state": "streaming",
+          "sent_location": "8/2FD82350",
+          "replay_location": "8/2FD82350",
+          "sync_priority": 0,
+          "sync_state": "async",
+          "sent_location_bytes": 35162432336,
+          "replay_location_bytes": 35162432336,
+          "replication_lag_bytes": 0
+        },
+        {
+          "usename": "conjur-follower-conjurops-4-8-2-rc2.us-east-1.itp.conjur.net",
+          "application_name": "follower",
+          "client_addr": "107.23.142.212",
+          "backend_start": "2016-11-14 17:37:21 +0000",
+          "state": "broken",
+          "sent_location": "8/2FD82350",
+          "replay_location": "8/2FD82350",
+          "sync_priority": 0,
+          "sync_state": "async",
+          "sent_location_bytes": 35162432336,
+          "replay_location_bytes": 35162432336,
+          "replication_lag_bytes": 0
+        },
+        {
+          "usename": "localhost",
+          "application_name": "standby",
+          "client_addr": "107.21.89.217",
+          "backend_start": "2017-01-17 20:23:05 +0000",
+          "state": "streaming",
+          "sent_location": "8/2FD82350",
+          "replay_location": "8/2FD82350",
+          "sync_priority": 0,
+          "sync_state": "async",
+          "sent_location_bytes": 35162432336,
+          "replay_location_bytes": 35162432336,
+          "replication_lag_bytes": 0
+        }
+      ],
+      "pg_current_xlog_location": "8/2FD82350",
+      "pg_current_xlog_location_bytes": 35162432336
+    },
+    "archive_replication_status": {
+      "pg_current_xlog_location": "EE/4D6EDD98",
+      "pg_current_xlog_location_bytes": 1023501327768
+    }
+  },
+  "ok": true
+}
