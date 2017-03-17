@@ -18,3 +18,5 @@ would make it easy to get a quick glance view of health for the cluster.  That b
 * Well defined JSON document definition, maybe using JSON HyperSchema or something similar
 * Better visualization, something akin to [OpsDash](https://www.opsdash.com/blog/postgresql-streaming-replication-howto.html)
 * Historical data analysis, i.e. how does the data change over time?
+* A real navigation/information architecture - presumably there are many of these nodes, and a simple list isn't going to cut it.  Better metadata about each node and its related nodes would be great, too.
+* Search! It would be good to index the json data and be able to quickly find say "free space of every node" or something silly like that
